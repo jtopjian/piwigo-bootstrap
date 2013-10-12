@@ -86,10 +86,10 @@
   <div class="control-group">
     <div class="controls">
       <input type="hidden" name="pwg_token" value="{$PWG_TOKEN}">
-      <button class="btn btn-success" type="submit" name="validate">{'Submit'|@translate}</button>
-      <button class="btn btn-success" type="reset" name="reset">{'Reset'|@translate}</button>
+      <button class="btn btn-primary" type="submit" name="validate">{'Submit'|@translate}</button>
+      <button class="btn btn-primary" type="reset" name="reset">{'Reset'|@translate}</button>
     {if $ALLOW_USER_CUSTOMIZATION}
-      <button class="btn btn-success" type="submit" name="reset_to_default">{'Reset to default values'|@translate}</button>
+      <button class="btn btn-primary" type="submit" name="reset_to_default">{'Reset to default values'|@translate}</button>
     {/if}
   </p>
 

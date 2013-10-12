@@ -4,6 +4,7 @@
     <li><a href="{$U_HOME}">{'Home'|@translate}</a></li>
     <li class="active">{'About'|@translate}</li>
   </ol>
+  {include file='infos_errors.tpl'}
 
 {if $action ne 'none'}
 <form id="lostPassword" action="{$form_action}?action={$action}{if isset($key)}&amp;key={$key}{/if}" method="post">
@@ -24,7 +25,7 @@
   </div>
   <div class="control-group">
     <div class="controls">
-      <button class="btn btn-success" type="submit" name="submit">{'Change my password'|@translate}</button>
+      <button class="btn btn-primary" type="submit" name="submit">{'Change my password'|@translate}</button>
     </div>
   </div>
   {elseif $action eq 'reset'}
@@ -47,7 +48,7 @@
 
   <div class="control-group">
     <div class="controls">
-      <button class="btn btn-success" type="submit" name="submit">{'Submit'|@translate}</button>
+      <button class="btn btn-primary" type="submit" name="submit">{'Submit'|@translate}</button>
     </div>
   </div>
   {/if}

@@ -4,6 +4,7 @@
     <li><a href="{$U_HOME}">{'Home'|@translate}</a></li>
     <li class="active">{'User comments'|@translate}</li>
   </ol>
+  {include file='infos_errors.tpl'}
 
 <form class="filter" action="{$F_ACTION}" method="get">
 
@@ -79,7 +80,7 @@
 
   </fieldset>
 
-  <button class="btn btn-success" type="submit" name="submit">{'Filter and display'|@translate}</button>
+  <button class="btn btn-primary" type="submit" name="submit">{'Filter and display'|@translate}</button>
 
 </form>
 

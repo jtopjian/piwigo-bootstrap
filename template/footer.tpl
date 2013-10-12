@@ -1,8 +1,10 @@
 <!-- begin footer.tpl -->
 </div>
-<footer>
-  <div class="panel panel-default">
-    <div class="panel-body">
+<div class="row">
+  <div class="col-sm-12">
+  <footer>
+    <div class="panel panel-default">
+      <div class="panel-body">
   {if isset($debug.TIME)}
     {'Page generated in'|@translate} {$debug.TIME} ({$debug.NB_QUERIES} {'SQL queries in'|@translate} {$debug.SQL_TIME}) -
   {/if}
@@ -27,7 +29,7 @@
     {$v}
   {/foreach}
 {/if}
-  </div>
+    </div>
   </div>
 </footer> {* copyright *}
 {if isset($debug.QUERIES_LIST)}
@@ -39,7 +41,9 @@
   <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
   <!-- Latest compiled and minified JavaScript -->
   <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-  </div>
+        </div> <!-- column -->
+      </div> <!-- row -->
+    </div> <!-- container -->
   </body>
 </html>
 <!-- end footer.tpl -->

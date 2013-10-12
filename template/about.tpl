@@ -4,6 +4,7 @@
     <li><a href="{$U_HOME}">{'Home'|@translate}</a></li>
     <li class="active">{'About'|@translate}</li>
   </ol>
+  {include file='infos_errors.tpl'}
 
   {$ABOUT_MESSAGE}
   {if isset($THEME_ABOUT) }
