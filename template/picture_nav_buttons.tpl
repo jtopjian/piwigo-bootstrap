@@ -1,5 +1,11 @@
 <!-- begin picture_nav_buttons -->
 {if $DISPLAY_NAV_BUTTONS or isset($slideshow)}
+  {if isset($slideshow.U_START_PLAY)}
+    <li><a href="{$slideshow.U_START_PLAY}" title="{'Play of slideshow'|@translate}"><span class="glyphicon glyphicon-play"></span></a></li>
+  {/if}
+  {if isset($slideshow.U_STOP_PLAY)}
+    <li><a href="{$slideshow.U_STOP_PLAY}" title="{'Pause of slideshow'|@translate}"><span class="glyphicon glyphicon-pause"></span></a></li>
+  {/if}
   {if isset($U_UP) and !isset($slideshow)}
     <li><a href="{$U_UP}" title="{'Thumbnails'|@translate}"><span class="glyphicon glyphicon-th"></span></a></li>
   {/if}
@@ -15,19 +21,13 @@
     <li><a href="{$slideshow.U_START_REPEAT}" title="{'Repeat the slideshow'|@translate}"><span class="glyphicon glyphicon-repeat"></span></a></li>
   {/if}
   {if isset($slideshow.U_STOP_REPEAT)}
-    <a href="{$slideshow.U_STOP_REPEAT}" title="{'Not repeat the slideshow'|@translate}"><span class="glyphicon glyphicon-remove-circle"></span></a></li>
+    <li><a href="{$slideshow.U_STOP_REPEAT}" title="{'Not repeat the slideshow'|@translate}"><span class="glyphicon glyphicon-remove-circle"></span></a></li>
   {/if}
   {if isset($first)}
     <li><a href="{$first.U_IMG}" title="{'First'|@translate} : {$first.TITLE}"><span class="glyphicon glyphicon-backward"></span></a></li>
   {/if}
   {if isset($previous)}
     <li><a href="{$previous.U_IMG}" title="{'Previous'|@translate} : {$previous.TITLE|@escape}"><span class="glyphicon glyphicon-arrow-left"></span></a></li>
-  {/if}
-  {if isset($slideshow.U_START_PLAY)}
-    <li><a href="{$slideshow.U_START_PLAY}" title="{'Play of slideshow'|@translate}"><span class="glyphicon glyphicon-play"></span></a></li>
-  {/if}
-  {if isset($slideshow.U_STOP_PLAY)}
-    <li><a href="{$slideshow.U_STOP_PLAY}" title="{'Pause of slideshow'|@translate}"><span class="glyphicon glyphicon-stop"></span></a></li>
   {/if}
   {if isset($next)}
     <li><a href="{$next.U_IMG}" title="{'Next'|@translate} : {$next.TITLE|@escape}"><span class="glyphicon glyphicon-arrow-right"></span></a></li>

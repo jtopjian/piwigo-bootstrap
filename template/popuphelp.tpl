@@ -1,21 +1,19 @@
 <!-- begin popuphelp.tpl -->
-<div id="content" class="content">
-	<div class="titrePage">
-	<ul class="categoryActions">
-		<li><a href="#" onclick="window.close();" title="{'Close this window'|@translate}" class="pwg-state-default pwg-button">
-			<span class="pwg-icon pwg-icon-close">&nbsp;</span><span class="pwg-button-text">exit</span>
-		</a></li>
-	</ul>
-	<h2>{$PAGE_TITLE}</h2>
-	</div>
+<div class="row">
+{include file='infos_errors.tpl'}
+<nav class="navbar" role="navigation">
+  <div class="navbar-header">
+    <div class="navbar-brand"><a href="#" onclick="window.close();"><span class="glyphicon glyphicon-remove-sign"></span></a> {$PAGE_TITLE}</div>
+  <div>
+  <div class="collapse navbar-collapse">
+    <ul class="nav navbar-nav">
+      <li><a href="#" onclick="window.close();" title="{'Close this window'|@translate}"><span class="glyphicon glyphicon-remove-sign"></span></a></li>
+    </ul>
+  </div>
+</nav>
 
 {$HELP_CONTENT}
-
-<p>
-    <a href="#" onclick="window.close();">{'Close this window'|@translate}</a>
-</p>
 
 </div> <!-- content -->
 
 <!-- end popuphelp.tpl -->
-

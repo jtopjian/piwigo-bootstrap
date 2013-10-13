@@ -3,10 +3,8 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=0">
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="http://{$smarty.server.HTTP_HOST}/themes/{$themeconf.name}/css/theme.css">
 
-    <meta name="generator" content="Piwigo (aka PWG), see piwigo.org">
     {if isset($meta_ref) }
       {if isset($INFO_AUTHOR)}
       <meta name="author" content="{$INFO_AUTHOR|@strip_tags:false|@replace:'"':' '}">
@@ -35,20 +33,16 @@
     {if not empty($page_refresh)    }<meta http-equiv="refresh" content="{$page_refresh.TIME};url={$page_refresh.U_REFRESH}">{/if}
   </head>
   <body>
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-12">
-          <br>
-        </div>
-        <div class="col-sm-3">
-          {$MENUBAR}
-        </div>
-        <div class="col-sm-9">
-          <div id="jumbotron">
-            {if $PAGE_BANNER}
-              <h1>{$PAGE_BANNER}</h1>
-            {/if}
-          </div>
-          {if isset($theSwiftHeader)}{$theSwiftHeader}{/if}
+    <br>
+    <nav id="sidebar">
+      {$MENUBAR}
+    </nav>
+    <section class="content">
+      <div id="jumbotron">
+        {if $PAGE_BANNER}
+          <h1>{$PAGE_BANNER}</h1>
+        {/if}
+      </div>
+      {if isset($theSwiftHeader)}{$theSwiftHeader}{/if}
 <!-- end header.tpl -->
 
