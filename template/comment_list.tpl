@@ -14,34 +14,36 @@
       <a class="pull-left" href="{$comment.U_PICTURE}"><img {if $derivative->is_cached()}src="{$derivative->get_url()}"{else}src="{$ROOT_URL}{$themeconf.icon_dir}/img_small.png" data-src="{$derivative->get_url()}"{/if} alt="{$comment.ALT}"></a>
     {/if}
     <div class="media-body">
-      {if isset($comment.U_DELETE) or isset($comment.U_VALIDATE) or isset($comment.U_EDIT)}
-        <div class="actions" style="float:right;font-size:90%">
-          {if isset($comment.U_DELETE)}
-            <a href="{$comment.U_DELETE}" onclick="return confirm('{'Are you sure?'|@translate|@escape:javascript}');">{'Delete'|@translate}</a>
-            {if isset($comment.U_VALIDATE) or isset($comment.U_EDIT) or isset($comment.U_CANCEL)} | {/if}
-          {/if}
-          {if isset($comment.U_CANCEL)}
-            <a href="{$comment.U_CANCEL}">{'Cancel'|@translate}</a>{if isset($comment.U_VALIDATE)} | {/if}
-          {/if}
-          {if isset($comment.U_EDIT) and !isset($comment.IN_EDIT)}
-            <a class="editComment" href="{$comment.U_EDIT}#edit_comment">{'Edit'|@translate}</a>
-            {if isset($comment.U_VALIDATE)} | {/if}
-          {/if}
-          {if isset($comment.U_VALIDATE)}
-            <a href="{$comment.U_VALIDATE}">{'Validate'|@translate}</a>
-          {/if}
-        </div>
-      {/if}
       <h4 class="media-heading">
         {$comment.AUTHOR}
         {if $comment.WEBSITE_URL}
-          <a href="{$comment.WEBSITE_URL}" class="external" target="_blank" rel="nofollow"><span class="glyphicon glyphicon-home"></span></a>
+          <small><a href="{$comment.WEBSITE_URL}" class="external" target="_blank" rel="nofollow"><span class="icon-home"></span></a></small>
         {/if}
         {if $comment.EMAIL}
-          <a href="mailto:{$comment.EMAIL}"><span class="glyphicon glyphicon-envelope"></span></a>
+          <small><a href="mailto:{$comment.EMAIL}"><span class="icon-mail"></span></a></small>
         {/if}
       </h4>
-      <h5>{$comment.DATE}</h5>
+      <h5>
+        {$comment.DATE}
+        {if isset($comment.U_DELETE) or isset($comment.U_VALIDATE) or isset($comment.U_EDIT)}
+          <small>(
+            {if isset($comment.U_DELETE)}
+              <a href="{$comment.U_DELETE}" onclick="return confirm('{'Are you sure?'|@translate|@escape:javascript}');">{'Delete'|@translate}</a>
+              {if isset($comment.U_VALIDATE) or isset($comment.U_EDIT) or isset($comment.U_CANCEL)} | {/if}
+            {/if}
+            {if isset($comment.U_CANCEL)}
+              <a href="{$comment.U_CANCEL}">{'Cancel'|@translate}</a>{if isset($comment.U_VALIDATE)} | {/if}
+            {/if}
+            {if isset($comment.U_EDIT) and !isset($comment.IN_EDIT)}
+              <a class="editComment" href="{$comment.U_EDIT}#edit_comment">{'Edit'|@translate}</a>
+              {if isset($comment.U_VALIDATE)} | {/if}
+            {/if}
+            {if isset($comment.U_VALIDATE)}
+              <a href="{$comment.U_VALIDATE}">{'Validate'|@translate}</a>
+            {/if}
+            )</small>
+        {/if}
+      </h5>
       {if isset($comment.IN_EDIT)}
         <a name="edit_comment"></a>
         <form method="post" action="{$comment.U_EDIT}" id="editComment">
@@ -63,9 +65,10 @@
           <button class="btn" type="submit" name="submit">{'Submit'|@translate}</button>
         </form>
       {else}
-        {$comment.CONTENT}
+        <p>{$comment.CONTENT}</p>
       {/if}
     </div>
   </div>
+  <hr>
 {/foreach}
 <!-- end comment_list.tpl -->

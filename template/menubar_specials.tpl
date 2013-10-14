@@ -1,7 +1,7 @@
 <!-- begin menubar_specials.tpl -->
 <section id="menubar_specials">
   <header class="panel-heading">
-    <h4>{'Specials'|@translate}</h4>
+    <h4>{'Links'|@translate}</h4>
   </header>
   <div class="panel-body">
     <ul class="menubar">

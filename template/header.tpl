@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=0">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="http://{$smarty.server.HTTP_HOST}/themes/{$themeconf.name}/css/theme.css">
 
@@ -33,16 +32,13 @@
     {if not empty($page_refresh)    }<meta http-equiv="refresh" content="{$page_refresh.TIME};url={$page_refresh.U_REFRESH}">{/if}
   </head>
   <body>
-    <br>
-    <nav id="sidebar">
-      {$MENUBAR}
-    </nav>
-    <section class="content">
-      <div id="jumbotron">
-        {if $PAGE_BANNER}
-          <h1>{$PAGE_BANNER}</h1>
-        {/if}
-      </div>
-      {if isset($theSwiftHeader)}{$theSwiftHeader}{/if}
+    <div class="container">
+      <br>
+      <section class="content">
+        <div id="jumbotron">
+          {if $PAGE_BANNER}
+            <h1>{$PAGE_BANNER}</h1>
+          {/if}
+        </div>
+        {if isset($theSwiftHeader)}{$theSwiftHeader}{/if}
 <!-- end header.tpl -->
-
